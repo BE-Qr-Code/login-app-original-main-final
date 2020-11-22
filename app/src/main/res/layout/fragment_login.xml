@@ -3,8 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+
     tools:context=".LoginFragment">
 
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/et_custom"/>
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
@@ -36,9 +42,10 @@
         android:layout_marginRight="20dp"
         android:padding="15dp"
         android:inputType="textEmailAddress"
+
         android:fontFamily="@font/roboto_regular"
         android:layout_above="@id/et_password"
-        android:background="@drawable/et_custom"
+        android:background="@drawable/textbg"
         android:textSize="15sp" />
 
     <EditText
@@ -53,7 +60,7 @@
         android:fontFamily="@font/roboto_regular"
         android:inputType="textPassword"
         android:layout_centerInParent="true"
-        android:background="@drawable/et_custom"
+        android:background="@drawable/textbg"
         android:textSize="15sp" />
 
     <Button
@@ -67,6 +74,9 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/roboto_regular"
         android:textColor="@android:color/white"
+
+
+    android:angle="45"
         android:text="@string/login"/>
 
     <ImageView
