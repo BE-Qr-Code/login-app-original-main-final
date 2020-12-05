@@ -8,8 +8,10 @@
     <string name="password">Password</string>
     <string name="e_mail">Moodle ID</string>
     <string name="tag"></string>
+    <string name="your_department">Your Department</string>
     <string name="swipe_right_for_login">Swipe Right for Login</string>
     <string name="register">Register</string>
     <string name="re_type_password">Re-type Password</string>
-    <string name="your_name">Full Name</string>
+    <string name="your_firstname">Your First Name</string>
+    <string name="your_lastname">Your Last Name</string>
 </resources>
