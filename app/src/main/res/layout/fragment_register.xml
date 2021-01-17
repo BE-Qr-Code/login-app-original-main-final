@@ -32,7 +32,7 @@
         android:layout_marginBottom="50dp"/>
 
     <EditText
-        android:id="@+id/et_firstname"
+        android:id="@+id/fname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/your_firstname"
@@ -45,7 +45,7 @@
         android:background="@drawable/textbg"
         android:textSize="15sp" />
     <EditText
-        android:id="@+id/et_lastname"
+        android:id="@+id/lname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/your_lastname"
@@ -58,7 +58,20 @@
         android:background="@drawable/textbg"
         android:textSize="15sp" />
     <EditText
-        android:id="@+id/et_department"
+        android:id="@+id/moodleId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="MoodleId"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="15dp"
+        android:inputType="textPersonName"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/textbg"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/department"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/your_department"
@@ -72,21 +85,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/et_email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/e_mail"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        android:padding="15dp"
-        android:fontFamily="@font/roboto_regular"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/textbg"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/password"
@@ -100,7 +99,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/et_repassword"
+        android:id="@+id/repassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -118,7 +117,7 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
