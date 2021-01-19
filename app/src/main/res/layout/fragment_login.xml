@@ -9,25 +9,25 @@
    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:background="@drawable/app_background"/>
+       android:background="@drawable/aestheticbg"/>
 
   <TextView
       android:id="@+id/tv_title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_centerHorizontal="true"
-      android:text="@string/app_name"
-      android:textSize="50sp"
-      android:fontFamily="@font/indigo_daisy"
+      android:text="@string/login"
+      android:textSize="40sp"
+      android:textColor="@color/HeaderColor"
+      android:fontFamily="@font/pacificoregular"
       android:layout_marginStart="25dp"
-      android:layout_marginBottom="10dp"
+      android:layout_marginBottom="5dp"
       android:layout_above="@id/tv_subtitle"/>
 
   <TextView
       android:id="@+id/tv_subtitle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/tag"
+      android:text="@string/taglogin"
       android:textSize="17sp"
       android:fontFamily="@font/roboto_regular"
       android:layout_marginStart="25dp"
@@ -43,10 +43,11 @@
       android:layout_marginRight="20dp"
       android:padding="15dp"
       android:inputType="textEmailAddress"
-
+      android:textCursorDrawable="@null"
       android:fontFamily="@font/roboto_regular"
       android:layout_above="@id/password"
-      android:background="@drawable/textbg"
+      android:background="@drawable/textboxes_shape"
+      android:textColor="@color/HeaderColor"
       android:textSize="15sp" />
 
   <EditText
@@ -59,9 +60,11 @@
       android:layout_marginTop="10dp"
       android:padding="15dp"
       android:fontFamily="@font/roboto_regular"
+      android:textCursorDrawable="@null"
+      android:textColor="@color/HeaderColor"
       android:inputType="textPassword"
       android:layout_centerInParent="true"
-      android:background="@drawable/textbg"
+      android:background="@drawable/textboxes_shape"
       android:textSize="15sp" />
 
   <Button
@@ -69,14 +72,13 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/password"
-      android:background="@drawable/btn_custom"
+      android:background="@drawable/button_shape"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
-      android:layout_marginTop="15dp"
+      android:layout_marginTop="30dp"
       android:fontFamily="@font/roboto_regular"
       android:textColor="@android:color/white"
-      android:angle="45"
-      android:text="@string/login"/>
+      android:text="Login"/>
 
   <ImageView
       android:layout_width="30dp"

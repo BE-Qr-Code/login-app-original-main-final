@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/registerFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,29 +8,30 @@
     android:orientation="vertical"
     tools:context=".RegisterFragment"
 
-    android:background="@drawable/app_background">
+    android:background="@drawable/aestheticbg">
 
     <TextView
         android:id="@+id/tv_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:textAlignment="center"
-        android:textSize="50sp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
         android:layout_marginBottom="5dp"
-        android:fontFamily="@font/indigo_daisy"
-        android:layout_marginTop="60dp"/>
+        android:fontFamily="@font/pacificoregular"
+        android:text="@string/register"
+        android:textColor="@color/HeaderColor"
+        android:textAlignment="center"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/tv_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tag"
+        android:text="@string/tagsignin"
         android:textSize="17sp"
         android:fontFamily="@font/roboto_regular"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="40dp"/>
 
     <EditText
         android:id="@+id/fname"
@@ -41,8 +43,10 @@
         android:layout_marginBottom="10dp"
         android:padding="15dp"
         android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/HeaderColor"
         android:fontFamily="@font/roboto_regular"
-        android:background="@drawable/textbg"
+        android:background="@drawable/textboxes_shape"
         android:textSize="15sp" />
     <EditText
         android:id="@+id/lname"
@@ -54,8 +58,10 @@
         android:layout_marginBottom="10dp"
         android:padding="15dp"
         android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/HeaderColor"
         android:fontFamily="@font/roboto_regular"
-        android:background="@drawable/textbg"
+        android:background="@drawable/textboxes_shape"
         android:textSize="15sp" />
     <EditText
         android:id="@+id/moodleId"
@@ -67,23 +73,35 @@
         android:layout_marginBottom="10dp"
         android:padding="15dp"
         android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/HeaderColor"
         android:fontFamily="@font/roboto_regular"
-        android:background="@drawable/textbg"
+        android:background="@drawable/textboxes_shape"
         android:textSize="15sp" />
-    <EditText
+<!--    <EditText-->
+<!--        android:id="@+id/department"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:hint="@string/your_department"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:padding="15dp"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textCursorDrawable="@null"-->
+<!--        android:textColor="@color/HeaderColor"-->
+<!--        android:fontFamily="@font/roboto_regular"-->
+<!--        android:background="@drawable/textboxes_shape"-->
+<!--        android:textSize="15sp" />-->
+    <Spinner
         android:id="@+id/department"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="@string/your_department"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="15dp"
-        android:inputType="textPersonName"
-        android:fontFamily="@font/roboto_regular"
-        android:background="@drawable/textbg"
-        android:textSize="15sp" />
-
+        android:background="@drawable/spinner"
+        android:spinnerMode="dropdown" />
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
@@ -95,7 +113,9 @@
         android:padding="15dp"
         android:fontFamily="@font/roboto_regular"
         android:inputType="textPassword"
-        android:background="@drawable/textbg"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/HeaderColor"
+        android:background="@drawable/textboxes_shape"
         android:textSize="15sp" />
 
     <EditText
@@ -104,38 +124,42 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/textbg"
+        android:background="@drawable/textboxes_shape"
         android:fontFamily="@font/roboto_regular"
         android:hint="@string/re_type_password"
         android:inputType="textPassword"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/HeaderColor"
         android:padding="15dp"
         android:textSize="15sp" />
 
     <RelativeLayout
+        android:id="@+id/bottom_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1">
 
         <Button
             android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-
-            android:layout_marginTop="15dp"
-            android:background="@drawable/btn_custom"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_shape"
             android:fontFamily="@font/roboto_regular"
-            android:text="@string/register"
+            android:text="Register"
             android:textColor="@android:color/white" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_arrow_left"
             android:layout_above="@id/swipeLeft"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@+id/signup_button"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_arrow_left" />
 
         <TextView
             android:id="@+id/swipeLeft"
