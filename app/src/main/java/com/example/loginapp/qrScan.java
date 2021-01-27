@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -19,6 +20,13 @@ import com.google.zxing.Result;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class qrScan extends AppCompatActivity {
 
@@ -80,19 +88,33 @@ public class qrScan extends AppCompatActivity {
                     public void run() {
                         qrCode_data = result.getText(); //get the whole JSON string from the qr code
                         try {
+                            //to compare with database
+                            //current time
+                            String currentTime= new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+                            //current date
+                            String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+                            //current location: lati and longi
+                            
+
+
+                            Log.d("date and time", currentTime + " " + currentDate);
+
+
                             JSONObject obj = new JSONObject(qrCode_data);
 
                             //To start next activity/screen
                             Intent intent = new Intent(qrScan.this, display_qr_data.class);
-                            intent.putExtra("courseName", obj.getString("course"));
-                            intent.putExtra("sessionName", obj.getString("session"));
-                            intent.putExtra("instructorName", obj.getString("instructor"));
-                            intent.putExtra("password", obj.getString("password"));
+                            intent.putExtra("sessionId", obj.getString("sessionId"));
+                            //intent.putExtra("subjectName", obj.getString("subjectName"));
+                            //intent.putExtra("instructorName", obj.getString("instructorName"));
+                            intent.putExtra("status", obj.getString("status"));
                             startActivity(intent);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(qrScan.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(qrScan.this, qrCode_data, Toast.LENGTH_LONG).show();
                         }
                     }
                 });

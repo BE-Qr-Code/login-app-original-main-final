@@ -21,6 +21,7 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class RegisterFragment extends Fragment {
     private ArrayList<DepartmentModel> goodModelArrayList = new ArrayList<>();
     private ArrayList<String> departmentItems = new ArrayList<String>();
     private Spinner spinner;
+    private ProgressBar progressBar;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -70,7 +72,8 @@ public class RegisterFragment extends Fragment {
         EditTextrepassword=view.findViewById(R.id.repassword);
         register = view.findViewById(R.id.signup_button);
         spinner = view.findViewById(R.id.department);
-        fetchJSON();
+        progressBar = view.findViewById(R.id.progress_circular);
+        fetchJSON(); //dropdown menu for department options
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,6 +185,9 @@ public class RegisterFragment extends Fragment {
         Api api = ApiClient.getClient().create(Api.class);
         Call<User> call = api.register(moodleId, fname, lname, dept, password);
 
+        //progress bar start
+        progressBar.setVisibility(ProgressBar.VISIBLE);
+
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -189,16 +195,22 @@ public class RegisterFragment extends Fragment {
                     
                     String moodleId = response.body().getMoodleId();
 
-                    Toast.makeText(getActivity(), "Registering user", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getActivity(), "Registering user", Toast.LENGTH_LONG).show();
 
-                    //create a delay of 3 seconds
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
-                            startActivity(intent);
-                        }
-                    }, 2000);
+                    //progress bar end
+                    progressBar.setVisibility(ProgressBar.INVISIBLE);
+
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+
+//                    //create a delay of 3 seconds
+//                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Intent intent = new Intent(getActivity(), MainActivity.class);
+//                            startActivity(intent);
+//                        }
+//                    }, 2000);
                 }
                 else {
                     Toast.makeText(getActivity(),response.body().getMessage(), Toast.LENGTH_LONG).show();
@@ -207,6 +219,9 @@ public class RegisterFragment extends Fragment {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
+                //progress bar end
+                progressBar.setVisibility(ProgressBar.INVISIBLE);
+
                 Toast.makeText(getActivity(),t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
             }
         });

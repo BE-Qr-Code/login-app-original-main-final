@@ -146,20 +146,32 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_shape"
             android:fontFamily="@font/roboto_regular"
             android:text="Register"
             android:textColor="@android:color/white" />
 
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/signup_button"
+            android:layout_marginTop="7dp"
+            android:indeterminateTint="@color/colorPrimary"
+            android:visibility="invisible"
+            android:background="@drawable/progressbg">
+        </ProgressBar>
+
         <ImageView
+            android:id="@+id/arrow"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_above="@id/swipeLeft"
-            android:layout_below="@+id/signup_button"
-            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_arrow_left" />
+            android:src="@drawable/ic_baseline_navigate_before_24" />
 
         <TextView
             android:id="@+id/swipeLeft"
@@ -171,7 +183,6 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"/>
-
     </RelativeLayout>
 
 </LinearLayout>

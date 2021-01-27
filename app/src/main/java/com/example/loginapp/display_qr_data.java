@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class display_qr_data extends AppCompatActivity {
 
-    private TextView courseName, sessionName, instructorName, password;
+    private TextView sessionId, instructorName, subjectName, status;
     private Button scanQR;
 
     @Override
@@ -18,18 +18,18 @@ public class display_qr_data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_qr_data);
 
-        courseName = findViewById(R.id.course_name);
-        sessionName = findViewById(R.id.session_name);
+        sessionId = findViewById(R.id.session_Id);
+        subjectName = findViewById(R.id.subject_name);
         instructorName = findViewById(R.id.instructor_name);
-        password = findViewById(R.id.password_name);
+        status = findViewById(R.id.status_name);
         scanQR = findViewById(R.id.scan_button);
 
         Bundle extra = getIntent().getExtras();
         if(extra != null){
-            courseName.setText(extra.getString("courseName"));
-            sessionName.setText(extra.getString("sessionName"));
-            instructorName.setText(extra.getString("instructorName"));
-            password.setText(extra.getString("password"));
+            sessionId.setText(extra.getString("sessionId"));
+            //subjectName.setText(extra.getString("subjectName"));
+            //instructorName.setText(extra.getString("instructorName"));
+            status.setText(extra.getString("status"));
         }
         else {
             Toast.makeText(display_qr_data.this, "Qr does not contain any data", Toast.LENGTH_LONG).show();

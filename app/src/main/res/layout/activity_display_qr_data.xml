@@ -16,27 +16,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/course"
-            android:text="Course: "
-            android:textColor="@android:color/black"
-            android:layout_marginTop="50px"
-            android:width="200px">
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/course_name"
-            android:layout_toRightOf="@+id/course"
-            android:layout_marginTop="50px"
-            android:textColor="@android:color/black">
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/session"
-            android:layout_below="@+id/course"
-            android:text="Session: "
+            android:text="SessionID: "
             android:textColor="@android:color/black"
             android:layout_marginTop="10px"
             android:width="200px">
@@ -44,9 +25,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/session_name"
+            android:id="@+id/session_Id"
             android:layout_toRightOf="@+id/session"
-            android:layout_below="@+id/course_name"
             android:layout_marginTop="10px"
             android:textColor="@android:color/black">
         </TextView>
@@ -66,7 +46,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/instructor_name"
             android:layout_toRightOf="@+id/instructor"
-            android:layout_below="@+id/session_name"
+            android:layout_below="@+id/session_Id"
             android:layout_marginTop="10px"
             android:textColor="@android:color/black">
         </TextView>
@@ -74,9 +54,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
+            android:id="@+id/subject"
             android:layout_below="@+id/instructor"
-            android:text="Password: "
+            android:text="Subject: "
             android:textColor="@android:color/black"
             android:layout_marginTop="10px"
             android:width="200px">
@@ -84,9 +64,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/password_name"
-            android:layout_toRightOf="@+id/password"
+            android:id="@+id/subject_name"
+            android:layout_toRightOf="@+id/subject"
             android:layout_below="@+id/instructor_name"
+            android:layout_marginTop="10px"
+            android:textColor="@android:color/black">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/status"
+            android:layout_below="@+id/subject"
+            android:text="Status: "
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10px"
+            android:width="200px">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/status_name"
+            android:layout_toRightOf="@+id/status"
+            android:layout_below="@+id/subject_name"
             android:layout_marginTop="10px"
             android:textColor="@android:color/black">
         </TextView>
@@ -94,8 +94,10 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:textColor="#C2DBD5"
             android:id="@+id/scan_button"
-            android:layout_below="@+id/password"
+            android:layout_below="@+id/status"
             android:layout_marginTop="30px"
             android:text="Scan QR">
         </Button>
