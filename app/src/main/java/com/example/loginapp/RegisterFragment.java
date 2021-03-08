@@ -96,7 +96,7 @@ public class RegisterFragment extends Fragment {
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
 
                 if(response.isSuccessful()){
-                    String jsonresponse=response.body().toString();
+                    String jsonresponse = response.body().toString();
                     spinJSON(jsonresponse);
                 }
             }
@@ -113,7 +113,7 @@ public class RegisterFragment extends Fragment {
             JSONObject obj = new JSONObject(response);
             if(obj.optInt("isSuccess")==1){
                 goodModelArrayList = new ArrayList<>();
-                JSONArray dataArray=obj.getJSONArray("data");
+                JSONArray dataArray = obj.getJSONArray("data");
 
                 for(int i=0; i<dataArray.length(); i++){
                     DepartmentModel departmentModel = new DepartmentModel();

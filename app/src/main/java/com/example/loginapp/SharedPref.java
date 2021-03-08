@@ -3,6 +3,7 @@ package com.example.loginapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.util.ConcurrentModificationException;
 
@@ -12,7 +13,7 @@ public class SharedPref {
     public static final String SHARED_PREF_NAME="attendance";
 
     //Username
-    public static final String MOODLE_ID="moodleId";
+    public static final String MOODLE_ID="moodleId";    //key
 
     public static SharedPref mInstance;
     public static Context mCtx;
@@ -33,7 +34,7 @@ public class SharedPref {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         //MODE_PRIVATE: By setting this mode, the file can only be accessed using calling application
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(MOODLE_ID, id);
+        editor.putString(MOODLE_ID, id);    //(key, value) pair
         editor.commit();
     }
 

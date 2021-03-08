@@ -17,4 +17,15 @@
         app:maskColor="#52020202" >
     </com.budiyev.android.codescanner.CodeScannerView>
 
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="@color/colorPrimary"
+        android:background="@drawable/progressbg"
+        android:visibility="invisible">
+    </ProgressBar>
+
 </RelativeLayout>

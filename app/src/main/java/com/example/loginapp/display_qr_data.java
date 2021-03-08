@@ -29,7 +29,7 @@ public class display_qr_data extends AppCompatActivity {
             sessionId.setText(extra.getString("sessionId"));
             //subjectName.setText(extra.getString("subjectName"));
             //instructorName.setText(extra.getString("instructorName"));
-            status.setText(extra.getString("status"));
+            //status.setText(extra.getString("status"));
         }
         else {
             Toast.makeText(display_qr_data.this, "Qr does not contain any data", Toast.LENGTH_LONG).show();

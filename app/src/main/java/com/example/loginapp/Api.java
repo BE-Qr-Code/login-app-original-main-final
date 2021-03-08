@@ -25,5 +25,17 @@ public interface Api {
 
     @Headers("Content-Type: text/html")
     @GET("departmentitems.php")
-    Call<JsonObject> getDepartmentItems();
+    Call<JsonObject> getDepartmentItems();  //return 'response' in form of JSON directly
+
+    @FormUrlEncoded
+    @POST("scanCheck.php/")
+    Call<JsonObject> scanDetails(@Field("SessionID") String sessionId,
+                                  @Field("qrcode") String qrcode,
+                                  @Field("qrdate") String currentDate,
+                                  @Field("timestamp") String currentTime,
+                                  @Field("DepartQID") String departId,
+                                  @Field("latitude") Double latitude,
+                                  @Field("longitude") Double longitude,
+                                  @Field("SubjectQID") String subjectId,
+                                  @Field("MoodleId") String moodleId);
 }

@@ -1,7 +1,9 @@
 package com.example.loginapp;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -37,11 +39,11 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                             Bundle savedInstanceState) {
 
-        //Check if user is logged in
-//       if(!SharedPref.getInstance(getActivity()).isLoggedIn()){
-//            Intent intent = new Intent(getActivity(), qrScan.class);
-//            startActivity(intent);
-//        }
+        //---------- Check if user is logged in ----------
+       if(SharedPref.getInstance(getActivity()).isLoggedIn()){
+            Intent intent = new Intent(getActivity(), HomeScreen.class);
+            startActivity(intent);
+        }
 
        View view = inflater.inflate(R.layout.fragment_login, container, false);
 
@@ -57,7 +59,6 @@ public class LoginFragment extends Fragment {
                EditTextpassword.setError(null);
 
                validateUserData();
-
            }
        });
        // Inflate the layout for this fragment
@@ -65,8 +66,8 @@ public class LoginFragment extends Fragment {
    }
 
     private void validateUserData(){
-        final String moodleId= EditTextmoodleId.getText().toString();
-        final String password=EditTextpassword.getText().toString();
+        final String moodleId = EditTextmoodleId.getText().toString();
+        final String password = EditTextpassword.getText().toString();
 
         //checking if username and password is empty
         if(TextUtils.isEmpty(moodleId) || moodleId.length()>8 ||moodleId.length()<8){
@@ -95,16 +96,16 @@ public class LoginFragment extends Fragment {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.body().getIsSuccess() == 1){
-                    //get username
-                    String moodleId = response.body().getMoodleId();
 
-                    //storing the user in shared preferences
+                    Log.d("moodleId_forshared: ", moodleId);
+
+                    //------------storing the user in shared preferences
                     SharedPref.getInstance(getActivity()).storeMoodleId(moodleId);
 
                     //progress bar end
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
 
-                    Intent intent = new Intent(getActivity(), qrScan.class);
+                    Intent intent = new Intent(getActivity(), HomeScreen.class);
                     startActivity(intent);
 
 //                    Toast.makeText(getActivity(), "Logging in", Toast.LENGTH_LONG).show();
@@ -122,6 +123,7 @@ public class LoginFragment extends Fragment {
                     progressBar.setVisibility(ProgressBar.INVISIBLE);
 
                     Toast.makeText(getActivity(), response.body().getMessage(),Toast.LENGTH_LONG).show();
+                    Log.d("error", response.body().getMessage());
                 }
             }
 
