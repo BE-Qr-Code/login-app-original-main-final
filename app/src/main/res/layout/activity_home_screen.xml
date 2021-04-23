@@ -11,45 +11,139 @@
         android:layout_height="match_parent"
         android:background="@drawable/aestheticbg" />
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello"
-        android:textSize="40sp"
-        android:textColor="@color/HeaderColor"
-        android:fontFamily="@font/pacificoregular"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/moodleId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_title"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text=""
-        android:textSize="20sp"
-        android:textColor="@color/HeaderColor"
-        android:fontFamily="@font/pacificoregular"
-        android:layout_marginTop="10sp"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="100dp"
+            android:elevation="15dp"
+            android:background="@drawable/bg_top_home">
 
-    <Button
-        android:id="@+id/scanQR_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/moodleId"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/button_shape"
-        android:fontFamily="@font/roboto_regular"
-        android:text="Scan QR"
-        android:textColor="@android:color/white" />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="25sp"
+                android:textColor="@color/HeaderColor"
+
+                />
+
+            <TextView
+                android:id="@+id/moodleId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Hello User"
+                android:textSize="25sp"
+                android:textColor="@color/HeaderColor"
+                />
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/codeicon">
+                    </ImageView>
+
+                    <Button
+                        android:id="@+id/scanQR_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_below="@id/tv_title"
+                        android:background="@drawable/button_shape"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="35px"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@android:color/white"
+                        android:text="Scan QR"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/studentcenter">
+                    </ImageView>
+
+                    <Button
+                        android:id="@+id/checkAtt_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="90px"
+                        android:layout_below="@id/tv_title"
+                        android:background="@drawable/button_shape"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="35px"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@android:color/white"
+                        android:text="Attendance"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
