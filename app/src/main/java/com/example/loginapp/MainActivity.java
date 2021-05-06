@@ -132,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private LocationCallback mLocationCallback = new LocationCallback() {
-
         @Override
         public void onLocationResult(LocationResult locationResult) {
             Location mLastLocation = locationResult.getLastLocation();
@@ -148,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
             locationModel.setLongitude(longitude);
 
             Log.d("mlatiandloti", "onLocationResult: Latitude: " +mLastLocation.getLatitude() + "Longitude: " + mLastLocation.getLatitude());
-
         }
     };
 

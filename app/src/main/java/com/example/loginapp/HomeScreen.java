@@ -30,7 +30,7 @@ public class HomeScreen extends AppCompatActivity {
         moodleId = findViewById(R.id.moodleId);
         scanQR_btn = findViewById(R.id.scanQR_button);
 
-        moodleId.setText("Hello" + "\t" + SharedPref.getInstance(HomeScreen.this).LoggedInUser());
+        moodleId.setText("Hello " + "\t" + SharedPref.getInstance(HomeScreen.this).LoggedInUser());
 
         scanQR_btn.setOnClickListener(new View.OnClickListener() {
             @Override

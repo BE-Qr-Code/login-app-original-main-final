@@ -17,12 +17,13 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/helloUser"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginLeft="50px"
             android:layout_marginRight="50px"
             android:layout_marginTop="100dp"
-            android:elevation="15dp"
+            android:elevation="10dp"
             android:background="@drawable/bg_top_home">
 
             <TextView
@@ -50,98 +51,136 @@
 
         </RelativeLayout>
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:columnCount="2"
-            android:rowCount="3"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false">
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="200px"
+            android:background="@drawable/card_bg"
+            android:elevation="25dp"
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp">
+            android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50px"
+                android:background="@drawable/codeicon">
+            </ImageView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/codeicon">
-                    </ImageView>
+            <Button
+                android:id="@+id/scanQR_button"
+                android:layout_width="match_parent"
+                android:layout_height="90px"
+                android:background="@drawable/button_shape"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="35px"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@android:color/white"
+                android:text="Scan QR"
+                />
 
-                    <Button
-                        android:id="@+id/scanQR_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="90px"
-                        android:layout_below="@id/tv_title"
-                        android:background="@drawable/button_shape"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="5dp"
-                        android:textSize="35px"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textColor="@android:color/white"
-                        android:text="Scan QR"
-                        />
+        </LinearLayout>
 
-                </LinearLayout>
+<!--        <GridLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--&lt;!&ndash;            android:columnCount="3"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:rowCount="2"&ndash;&gt;-->
+<!--            android:alignmentMode="alignMargins"-->
+<!--            android:columnOrderPreserved="false">-->
 
-            </androidx.cardview.widget.CardView>
+<!--&lt;!&ndash;            <androidx.cardview.widget.CardView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_columnWeight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_rowWeight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:cardElevation="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:cardCornerRadius="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_margin="12dp">&ndash;&gt;-->
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="200dp"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:padding="16dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:background="@android:color/white"-->
+<!--                    -->
+<!--                    -->
+<!--                    android:orientation="vertical">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+<!--                    <ImageView-->
+<!--                        android:layout_width="80dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:background="@drawable/codeicon">-->
+<!--                    </ImageView>-->
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/studentcenter">
-                    </ImageView>
+<!--                    <Button-->
+<!--                        android:id="@+id/scanQR_button"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="90px"-->
+<!--                        android:layout_below="@id/tv_title"-->
+<!--                        android:background="@drawable/button_shape"-->
+<!--                        android:layout_marginLeft="20dp"-->
+<!--                        android:layout_marginRight="20dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textSize="35px"-->
+<!--                        android:fontFamily="@font/roboto_regular"-->
+<!--                        android:textColor="@android:color/white"-->
+<!--                        android:text="Scan QR"-->
+<!--                        />-->
 
-                    <Button
-                        android:id="@+id/checkAtt_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="90px"
-                        android:layout_below="@id/tv_title"
-                        android:background="@drawable/button_shape"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="5dp"
-                        android:textSize="35px"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textColor="@android:color/white"
-                        android:text="Attendance"
-                        />
+<!--                </LinearLayout>-->
 
-                </LinearLayout>
+<!--&lt;!&ndash;            </androidx.cardview.widget.CardView>&ndash;&gt;-->
 
-            </androidx.cardview.widget.CardView>
+<!--&lt;!&ndash;            <androidx.cardview.widget.CardView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_columnWeight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_rowWeight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:cardElevation="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:cardCornerRadius="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_margin="12dp">&ndash;&gt;-->
 
-        </GridLayout>
+<!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:orientation="vertical">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="80dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="80dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:background="@drawable/studentcenter">&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ImageView>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/checkAtt_button"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="90px"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_below="@id/tv_title"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:background="@drawable/button_shape"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginTop="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="35px"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:fontFamily="@font/roboto_regular"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@android:color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="Attendance"&ndash;&gt;-->
+<!--&lt;!&ndash;                        />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            </androidx.cardview.widget.CardView>&ndash;&gt;-->
+
+<!--        </GridLayout>-->
 
     </LinearLayout>
 
